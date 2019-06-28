@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Search By Destination</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<a href=/homePage><button>Link To Search Main Page</button></a>
+
+<form th:action="@{/byDestination}" method="get">
+    <input type="radio" name="direction" th:name="direction" value="0" checked> Arrived<br>
+    <input type="radio" name="direction" th:name="direction" value="1"> Departure<br>
+    <input type="text" th:name="destination" th:placeholder="destination" />
+    <div class="clearfix">
+        <button type="submit">Search</button>
+    </div>
+</form>
+<form th:action="@{/listDestination}" method="get">
+    <!--<div th:if="${not #lists.isEmpty(flights)}">-->
+        <!--<tr>-->
+            <!--<th>Flight</th>-->
+            <!--<th>Time</th>-->
+            <!--<th>Destination</th>-->
+            <!--<th>Carrier</th>-->
+            <!--<th>Terminal</th>-->
+            <!--<th>Status</th>-->
+        <!--</tr>-->
+        <!--<td th:text="String">Nothing was found</td>-->
+    <!--</div>-->
+    <table border="1" class="table table-striped">
+        <tr>
+            <th>Flight</th>
+            <th>Time</th>
+            <th>Destination</th>
+            <th>Carrier</th>
+            <th>Terminal</th>
+            <th>Status</th>
+        </tr>
+        <tr th:each="flight: ${flights}">
+            <td th:text="${flight.getFltname()}">Flight</td>
+            <td th:text="${flight.getDt_plan_f()}">Time</td>
+            <td th:text="${flight.getAirport0()}">Destination</td>
+            <td th:text="${flight.getAirline_name()}">Carrier</td>
+            <td th:text="${flight.getTerminal()}">Terminal</td>
+            <td th:text="${flight.getStatus_alias()}">Status</td>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>
