@@ -12,10 +12,10 @@ import java.util.List;
 public class FlightDAOImpl implements FlightDAO {
     private List<Flight> flights = new ArrayList<>();
     private Gson gson = new Gson();
-    private Flight[] flights1 = gson.fromJson(Data.getFlightArray(), Flight[].class);
+    private Flight[] flightsArray = gson.fromJson(Data.getFlightArray(), Flight[].class);
 
     public List<Flight> getListByDestination(String destination, String direction) {
-        for (Flight flight : flights1) {
+        for (Flight flight : flightsArray) {
             if ((flight.getRel_day_f().equals("todayActiveOnly")
                     && flight.getDirection().equals(direction)) &&
                     (flight.getAirport0().toLowerCase().contains(destination)
@@ -28,7 +28,7 @@ public class FlightDAOImpl implements FlightDAO {
     }
 
     public List<Flight> getListByFlight(String flightNumb, String direction) {
-        for (Flight flight : flights1) {
+        for (Flight flight : flightsArray) {
             if (flight.getFltname().toLowerCase().contains(flightNumb)
                     && flight.getRel_day_f().equals("todayActiveOnly")
                     && flight.getDirection().equals(direction)) {
@@ -39,7 +39,7 @@ public class FlightDAOImpl implements FlightDAO {
     }
 
     public List<Flight> getListByCarrier(String carrier, String direction) {
-        for (Flight flight : flights1) {
+        for (Flight flight : flightsArray) {
             if (flight.getAirline_name().toLowerCase().contains(carrier)
                     && flight.getRel_day_f().equals("todayActiveOnly")
                     && flight.getDirection().equals(direction)) {
