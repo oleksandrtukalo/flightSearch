@@ -1,4 +1,4 @@
-package com.wezara.flightSearch.service;
+package com.wezara.flightsearch.service;
 
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 @Service
-public class Data {
+public class DataService {
 
     private static String getConnection() {
         String result = "";
@@ -18,7 +18,6 @@ public class Data {
             conn.setRequestMethod("GET");
             conn.connect();
             int responsecode = conn.getResponseCode();
-            System.out.println("Response code is: " + responsecode);
             if (responsecode != 200)
                 throw new RuntimeException("HttpResponseCode: " + responsecode);
             else {

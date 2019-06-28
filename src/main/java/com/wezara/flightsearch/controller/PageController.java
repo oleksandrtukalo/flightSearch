@@ -1,4 +1,4 @@
-package com.wezara.flightSearch.controller;
+package com.wezara.flightsearch.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,5 @@
-package com.wezara.flightSearch;
+package com.wezara.flightsearch;
 
-import com.wezara.flightSearch.DAO.FlightDAOImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com.wezara.flightSearch.model;
+package com.wezara.flightsearch.model;
 
 import org.springframework.stereotype.Component;
 

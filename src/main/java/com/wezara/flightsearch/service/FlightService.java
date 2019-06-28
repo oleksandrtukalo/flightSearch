@@ -1,13 +1,13 @@
-package com.wezara.flightSearch.service;
+package com.wezara.flightsearch.service;
 
-import com.wezara.flightSearch.model.Flight;
+import com.wezara.flightsearch.model.Flight;
 
 import java.util.List;
 
 public interface FlightService {
     List<Flight> getListByDestination(String destination, String direction);
 
-    List<Flight> getListByFlight(String flight, String direction);
+    List<Flight> getListByFlight(String flightNumber, String direction);
 
     List<Flight> getListByCarrier(String carrier, String direction);
 }

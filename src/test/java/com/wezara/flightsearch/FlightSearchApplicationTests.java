@@ -1,4 +1,4 @@
-package com.wezara.flightSearch;
+package com.wezara.flightsearch;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

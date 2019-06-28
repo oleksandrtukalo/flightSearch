@@ -1,7 +1,7 @@
-package com.wezara.flightSearch.controller;
+package com.wezara.flightsearch.controller;
 
-import com.wezara.flightSearch.model.Flight;
-import com.wezara.flightSearch.service.FlightService;
+import com.wezara.flightsearch.model.Flight;
+import com.wezara.flightsearch.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
