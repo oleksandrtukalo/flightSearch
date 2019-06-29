@@ -10,4 +10,6 @@ public interface FlightService {
     List<Flight> getListByFlight(String flightNumber, String direction);
 
     List<Flight> getListByCarrier(String carrier, String direction);
+
+    void refreshCache();
 }

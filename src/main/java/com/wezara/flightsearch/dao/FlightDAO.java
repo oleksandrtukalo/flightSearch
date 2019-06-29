@@ -8,4 +8,5 @@ public interface FlightDAO {
 
     List<Flight> findAll();
 
+    void removeCache();
 }

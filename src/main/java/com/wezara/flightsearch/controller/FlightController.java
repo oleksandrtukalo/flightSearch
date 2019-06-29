@@ -55,7 +55,7 @@ public class FlightController {
         flightList.clear();
         flightList = flightService.getListByDestination(searchParam.toLowerCase(), directionParam);
         model.addAttribute("flights", flightList);
-        return "formByDestination";
+        return "formbydestination";
     }
 
     @RequestMapping(value = {"/listCarrier"}, method = RequestMethod.GET)
@@ -63,7 +63,7 @@ public class FlightController {
         flightList.clear();
         flightList = flightService.getListByCarrier(searchParam.toLowerCase(), directionParam);
         model.addAttribute("flights", flightList);
-        return "formByCarrier";
+        return "formbycarrier";
     }
 
     @RequestMapping(value = {"/listFlight"}, method = RequestMethod.GET)
@@ -71,8 +71,13 @@ public class FlightController {
         flightList.clear();
         flightList = flightService.getListByFlight(searchParam.toLowerCase(), directionParam);
         model.addAttribute("flights", flightList);
-        return "formByFlight";
+        return "formbyflight";
     }
 
+    @RequestMapping(value = {"/refreshCache"}, method = RequestMethod.GET)
+    public String refreshCache() {
+        flightService.refreshCache();
+        return "adminpage";
+    }
 
 }

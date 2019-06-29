@@ -14,16 +14,21 @@ public class PageController {
 
     @RequestMapping(value = {"/destinationPage"}, method = RequestMethod.GET)
     public String destinationPage() {
-        return "formByDestination";
+        return "formbydestination";
     }
 
     @RequestMapping(value = {"/carrierPage"}, method = RequestMethod.GET)
     public String carrierPage() {
-        return "formByCarrier";
+        return "formbycarrier";
     }
 
     @RequestMapping(value = {"/flightPage"}, method = RequestMethod.GET)
     public String flightPage() {
-        return "formByFlight";
+        return "formbyflight";
+    }
+
+    @RequestMapping(value = {"/adminPage"}, method = RequestMethod.GET)
+    public String adminPage() {
+        return "adminpage";
     }
 }

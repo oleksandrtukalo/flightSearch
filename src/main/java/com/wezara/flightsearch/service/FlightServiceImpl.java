@@ -21,6 +21,11 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public List<Flight> getListByDestination(String destination, String direction) {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return this.flightDAO.findAll().stream()
                 .filter(checkDirectionAndDay(direction))
                 .filter(flight -> ((flight.getAirport0().toLowerCase().contains(destination) ||
@@ -43,6 +48,12 @@ public class FlightServiceImpl implements FlightService {
                 .filter(checkDirectionAndDay(direction))
                 .filter(flight -> (flight.getAirline_name().toLowerCase().contains(carrier)))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void refreshCache() {
+        this.flightDAO.removeCache();
+        this.flightDAO.findAll();
     }
 
     private Predicate<? super Flight> checkDirectionAndDay(String direction) {
