@@ -21,11 +21,6 @@ public class FlightServiceImpl implements FlightService {
 
     @Override
     public List<Flight> getListByDestination(String destination, String direction) {
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         return this.flightDAO.findAll().stream()
                 .filter(checkDirectionAndDay(direction))
                 .filter(flight -> ((flight.getAirport0().toLowerCase().contains(destination) ||
